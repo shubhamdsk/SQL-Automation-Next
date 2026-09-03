@@ -1,6 +1,9 @@
+using SqlAutomation.ConnectionService.Features.Providers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHealthChecks();
+builder.Services.AddDatabaseProviderServices();
 
 var app = builder.Build();
 
@@ -11,5 +14,6 @@ app.MapGet("/", () => Results.Ok(new
 }));
 
 app.MapHealthChecks("/health");
+app.MapProviderEndpoints();
 
 app.Run();
