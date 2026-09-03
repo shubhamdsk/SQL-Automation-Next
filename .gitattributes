@@ -1,0 +1,64 @@
+# Normalize text files and store them with LF line endings
+
+* text=auto eol=lf
+
+# Windows command scripts require CRLF
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Unix and cross-platform scripts use LF
+
+*.sh text eol=lf
+*.ps1 text eol=lf
+
+# Docker files use LF
+
+Dockerfile text eol=lf
+*.dockerfile text eol=lf
+
+# Images
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.bmp binary
+
+# Fonts
+
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+
+# Documents
+
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+*.ppt binary
+*.pptx binary
+
+# Archives
+
+*.zip binary
+*.gz binary
+*.tar binary
+*.7z binary
+
+# Compiled and database files
+
+*.dll binary
+*.exe binary
+*.pdb binary
+*.mdf binary
+*.ldf binary
+*.bak binary
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
