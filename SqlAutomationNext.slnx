@@ -1,2 +1,5 @@
 <Solution>
+  <Folder Name="/Gateway/">
+    <Project Path="gateway/SqlAutomation.Gateway/SqlAutomation.Gateway.csproj" />
+  </Folder>
 </Solution>
