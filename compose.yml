@@ -1,0 +1,28 @@
+name: sql-automation-next
+
+services:
+  gateway:
+    image: sql-automation-next-gateway:dev
+    build:
+      context: .
+      dockerfile: gateway/SqlAutomation.Gateway/Dockerfile
+    ports:
+      - "${GATEWAY_PORT:-5080}:8080"
+    networks:
+      - app-network
+
+  client:
+    image: sql-automation-next-client:dev
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    ports:
+      - "${CLIENT_PORT:-5173}:8080"
+    depends_on:
+      - gateway
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
