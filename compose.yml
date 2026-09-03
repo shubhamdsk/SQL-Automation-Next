@@ -1,13 +1,27 @@
 name: sql-automation-next
 
 services:
+  connection-service:
+    image: sql-automation-next-connection-service:dev
+    build:
+      context: .
+      dockerfile: services/SqlAutomation.ConnectionService/Dockerfile
+    ports:
+      - "${CONNECTION_SERVICE_PORT:-5090}:8080"
+    networks:
+      - app-network
+
   gateway:
     image: sql-automation-next-gateway:dev
     build:
       context: .
       dockerfile: gateway/SqlAutomation.Gateway/Dockerfile
+    environment:
+      ReverseProxy__Clusters__connections__Destinations__primary__Address: http://connection-service:8080/
     ports:
       - "${GATEWAY_PORT:-5080}:8080"
+    depends_on:
+      - connection-service
     networks:
       - app-network
 
