@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <Authors>Shubham Deshmukh</Authors>
+    <Company>SQL Automation Next</Company>
+    <Product>SQL Automation Next</Product>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/shubhamdsk/SQL-Automation-Next</RepositoryUrl>
+  </PropertyGroup>
+</Project>
