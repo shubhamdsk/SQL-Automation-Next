@@ -2,4 +2,7 @@
   <Folder Name="/Gateway/">
     <Project Path="gateway/SqlAutomation.Gateway/SqlAutomation.Gateway.csproj" />
   </Folder>
+  <Folder Name="/Services/">
+    <Project Path="services/SqlAutomation.ConnectionService/SqlAutomation.ConnectionService.csproj" />
+  </Folder>
 </Solution>
